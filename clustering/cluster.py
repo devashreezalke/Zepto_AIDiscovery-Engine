@@ -1,7 +1,15 @@
 import os
 import numpy as np
 import logging
-import matplotlib.pyplot as plt
+
+try:
+    import matplotlib
+    matplotlib.use('Agg') # Headless non-GUI backend for server environments like Railway
+    import matplotlib.pyplot as plt
+    MATPLOTLIB_AVAILABLE = True
+except Exception as e:
+    MATPLOTLIB_AVAILABLE = False
+
 from sklearn.cluster import DBSCAN
 from sklearn.decomposition import PCA
 from clustering.embeddings import generate_embeddings
@@ -40,47 +48,48 @@ def run_clustering(db_path='data/discovery.db', eps=0.45, min_samples=3):
     # For now, we report the counts
     
     # 2. Project to 2D using PCA for visualization (highly robust, zero-compilation)
-    logger.info("Projecting embeddings to 2D using PCA...")
-    try:
-        pca = PCA(n_components=2, random_state=42)
-        coords_2d = pca.fit_transform(normalized_embeddings)
-        
-        # Plot and save to data/clusters.png
-        plt.figure(figsize=(10, 8))
-        
-        # Plot noise
-        noise_mask = (cluster_labels == -1)
-        plt.scatter(
-            coords_2d[noise_mask, 0], coords_2d[noise_mask, 1],
-            c='#D1D5DB', label='Noise/Unclassified', alpha=0.5, s=25
-        )
-        
-        # Plot active clusters
-        for label in sorted(unique_labels):
-            if label == -1:
-                continue
-            mask = (cluster_labels == label)
+    if MATPLOTLIB_AVAILABLE:
+        logger.info("Projecting embeddings to 2D using PCA...")
+        try:
+            pca = PCA(n_components=2, random_state=42)
+            coords_2d = pca.fit_transform(normalized_embeddings)
+            
+            # Plot and save to data/clusters.png
+            plt.figure(figsize=(10, 8))
+            
+            # Plot noise
+            noise_mask = (cluster_labels == -1)
             plt.scatter(
-                coords_2d[mask, 0], coords_2d[mask, 1],
-                label=f'Theme Cluster {label}', alpha=0.8, s=40
+                coords_2d[noise_mask, 0], coords_2d[noise_mask, 1],
+                c='#D1D5DB', label='Noise/Unclassified', alpha=0.5, s=25
             )
             
-        plt.title('Zepto User Feedback Semantic Clusters (PCA Projection)', fontsize=14, fontweight='bold', pad=15)
-        plt.xlabel('PCA Component 1')
-        plt.ylabel('PCA Component 2')
-        # Only show legend if there are not too many clusters
-        if n_clusters < 15:
-            plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
-        plt.tight_layout()
-        
-        # Ensure output directory exists
-        os.makedirs('data', exist_ok=True)
-        img_path = os.path.join('data', 'clusters.png')
-        plt.savefig(img_path, dpi=150)
-        plt.close()
-        logger.info(f"Cluster visualization saved successfully at {img_path}")
-    except Exception as e:
-        logger.error(f"Failed to generate cluster plot: {e}")
+            # Plot active clusters
+            for label in sorted(unique_labels):
+                if label == -1:
+                    continue
+                mask = (cluster_labels == label)
+                plt.scatter(
+                    coords_2d[mask, 0], coords_2d[mask, 1],
+                    label=f'Theme Cluster {label}', alpha=0.8, s=40
+                )
+                
+            plt.title('Zepto User Feedback Semantic Clusters (PCA Projection)', fontsize=14, fontweight='bold', pad=15)
+            plt.xlabel('PCA Component 1')
+            plt.ylabel('PCA Component 2')
+            # Only show legend if there are not too many clusters
+            if n_clusters < 15:
+                plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+            plt.tight_layout()
+            
+            # Ensure output directory exists
+            os.makedirs('data', exist_ok=True)
+            img_path = os.path.join('data', 'clusters.png')
+            plt.savefig(img_path, dpi=150)
+            plt.close()
+            logger.info(f"Cluster visualization saved successfully at {img_path}")
+        except Exception as e:
+            logger.error(f"Failed to generate cluster plot: {e}")
 
     # Create mapping of doc_id to cluster label
     doc_cluster_map = {doc_ids[i]: int(cluster_labels[i]) for i in range(len(doc_ids))}

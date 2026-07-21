@@ -13,5 +13,6 @@ numpy==2.4.6
 python-dateutil==2.9.0.post0
 requests==2.34.2
 beautifulsoup4==4.15.0
+matplotlib
 # Note: hdbscan requires Visual C++ compiler on Windows for Python 3.14+
 # We use sklearn.cluster.DBSCAN or KMeans as zero-compilation density-based fallbacks.
