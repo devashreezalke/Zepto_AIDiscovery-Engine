@@ -37,6 +37,8 @@ def get_insights():
             
     return {"error": "Insights data feed is not generated yet. Run pipeline first."}
 
+from fastapi.responses import FileResponse, JSONResponse
+
 @app.post("/api/run-pipeline")
 def trigger_pipeline():
     """Web-hook to run the ETL ingestion and validation pipeline in the background."""
@@ -45,12 +47,17 @@ def trigger_pipeline():
         from run_pipeline import run_full_pipeline
         import threading
         
-        logger.info("Etl pipeline run requested via Webhook...")
+        logger.info("ETL pipeline run requested via Webhook...")
         threading.Thread(target=run_full_pipeline).start()
-        return {"status": "Pipeline run triggered in the background."}
+        return {"status": "success", "message": "Pipeline run triggered in the background."}
     except Exception as e:
-        logger.error(f"Failed to trigger pipeline: {e}")
-        return {"status": "error", "error": str(e), "traceback": traceback.format_exc()}
+        error_str = str(e)
+        tb_str = traceback.format_exc()
+        logger.error(f"Failed to trigger pipeline: {error_str}\n{tb_str}")
+        return JSONResponse(
+            status_code=200,
+            content={"status": "error", "error": error_str, "traceback": tb_str}
+        )
 
 if __name__ == '__main__':
     import uvicorn

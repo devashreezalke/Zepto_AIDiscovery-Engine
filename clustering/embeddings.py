@@ -2,7 +2,6 @@ import json
 import sqlite3
 import numpy as np
 import logging
-from sentence_transformers import SentenceTransformer
 from analysis.groq_client import client
 
 logger = logging.getLogger(__name__)
@@ -66,6 +65,7 @@ def generate_embeddings(db_path='data/discovery.db'):
     if not use_mock:
         logger.info(f"Loading sentence-transformers model 'all-MiniLM-L6-v2'...")
         try:
+            from sentence_transformers import SentenceTransformer
             model = SentenceTransformer('all-MiniLM-L6-v2')
             logger.info(f"Generating embeddings for {len(texts_to_embed)} documents...")
             embeddings = model.encode(texts_to_embed, show_progress_bar=True)
