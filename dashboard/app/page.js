@@ -21,6 +21,8 @@ export default function Dashboard() {
   const [expandedTheme, setExpandedTheme] = useState(null);
   const [themeFilter, setThemeFilter] = useState("ALL");
   const [expandedRQ, setExpandedRQ] = useState(null);
+  const [triggering, setTriggering] = useState(false);
+  const [triggerStatus, setTriggerStatus] = useState("");
 
   useEffect(() => {
     // Dynamically check for deployed API URL, fallback to local static JSON
@@ -182,13 +184,55 @@ export default function Dashboard() {
             </div>
           </nav>
 
-          <div className="p-4 border-t border-gray-200 bg-gray-50/50">
-            <div className="flex items-center gap-2 text-xs text-gray-500 font-semibold mb-2 uppercase tracking-wider">
+          <div className="p-4 border-t border-gray-200 bg-gray-50/50 space-y-3">
+            <div className="flex items-center gap-2 text-xs text-gray-500 font-semibold uppercase tracking-wider">
               <Globe className="h-3 w-3" />
               <span>System Metadata</span>
             </div>
-            <p className="text-xs text-gray-600">Analyzed: <strong className="text-gray-800">{summary.total_documents} reviews</strong></p>
-            <p className="text-xs text-gray-600 mt-1">Generated: <strong className="text-gray-800">{new Date(data.generated_at).toLocaleDateString()}</strong></p>
+            <div className="text-xs text-gray-600 space-y-1">
+              <p>Analyzed: <strong className="text-gray-800">{summary.total_documents} reviews</strong></p>
+              <p>Generated: <strong className="text-gray-800">{new Date(data.generated_at).toLocaleDateString()}</strong></p>
+            </div>
+            
+            {/* Dynamic Pipeline Trigger Button */}
+            <div className="pt-2">
+              <button
+                onClick={() => {
+                  const baseApiUrl = process.env.NEXT_PUBLIC_API_URL;
+                  if (!baseApiUrl) {
+                    setTriggerStatus("API url missing in settings");
+                    setTimeout(() => setTriggerStatus(""), 3000);
+                    return;
+                  }
+                  setTriggering(true);
+                  setTriggerStatus("Connecting...");
+                  fetch(`${baseApiUrl}/api/run-pipeline`, { method: "POST" })
+                    .then(res => {
+                      if (!res.ok) throw new Error();
+                      return res.json();
+                    })
+                    .then(() => {
+                      setTriggerStatus("ETL Started on Railway!");
+                      setTriggering(false);
+                      setTimeout(() => setTriggerStatus(""), 4000);
+                    })
+                    .catch(() => {
+                      setTriggerStatus("Connection failed");
+                      setTriggering(false);
+                      setTimeout(() => setTriggerStatus(""), 3000);
+                    });
+                }}
+                disabled={triggering}
+                className="w-full bg-[#E21A84] hover:bg-[#FF007F] text-white text-xs font-bold py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition disabled:opacity-50"
+              >
+                {triggering ? "Starting..." : "Refresh Pipeline Data"}
+              </button>
+              {triggerStatus && (
+                <p className="text-[10px] text-center font-bold text-purple-950 mt-1.5 animate-pulse">
+                  {triggerStatus}
+                </p>
+              )}
+            </div>
           </div>
         </aside>
 
