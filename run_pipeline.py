@@ -23,6 +23,15 @@ def run_full_pipeline():
     logger.info("    ZEPTO AI-POWERED DISCOVERY ENGINE PIPELINE EXECUTION START    ")
     logger.info("=================================================================")
     
+    # Step 0: DB Schema Initialization
+    logger.info("--- [STAGE 0] Initializing Database Schema ---")
+    try:
+        from data.db_init import init_db
+        init_db()
+    except Exception as e:
+        logger.error(f"Pipeline failed at Stage 0 (DB Init): {e}")
+        sys.exit(1)
+
     # Step 1: Ingestion
     logger.info("--- [STAGE 1] Running Data Ingestion Scrapers ---")
     try:

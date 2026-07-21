@@ -18,6 +18,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"status": "online", "service": "Zepto AI Discovery Engine API"}
+
 @app.get("/api/insights")
 def get_insights():
     """Serves the compiled insights_export.json feed to the dashboard."""
@@ -36,12 +40,17 @@ def get_insights():
 @app.post("/api/run-pipeline")
 def trigger_pipeline():
     """Web-hook to run the ETL ingestion and validation pipeline in the background."""
-    from run_pipeline import run_full_pipeline
-    import threading
-    
-    logger.info("Etl pipeline run requested via Webhook...")
-    threading.Thread(target=run_full_pipeline).start()
-    return {"status": "Pipeline run triggered in the background."}
+    import traceback
+    try:
+        from run_pipeline import run_full_pipeline
+        import threading
+        
+        logger.info("Etl pipeline run requested via Webhook...")
+        threading.Thread(target=run_full_pipeline).start()
+        return {"status": "Pipeline run triggered in the background."}
+    except Exception as e:
+        logger.error(f"Failed to trigger pipeline: {e}")
+        return {"status": "error", "error": str(e), "traceback": traceback.format_exc()}
 
 if __name__ == '__main__':
     import uvicorn

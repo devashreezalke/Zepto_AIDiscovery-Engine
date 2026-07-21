@@ -41,6 +41,10 @@ def run_ingestion(db_path='data/discovery.db'):
     """Runs all scrapers, processes, deduplicates and saves documents to the SQLite database."""
     logger.info("Starting data ingestion pipeline...")
     
+    # 0. Ensure database tables exist
+    from data.db_init import init_db
+    init_db(db_path)
+    
     # 1. Fetch data from all sources
     all_docs = []
     
