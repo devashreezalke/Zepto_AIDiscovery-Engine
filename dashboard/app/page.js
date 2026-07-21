@@ -54,12 +54,12 @@ export default function Dashboard() {
     );
   }
 
-  if (error || !data) {
+  if (error || !data || data.error) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4 text-center">
         <AlertTriangle className="h-16 w-16 text-yellow-500 mb-4" />
         <h2 className="text-xl font-bold text-gray-800 mb-2">Data Feed Offline</h2>
-        <p className="text-gray-600 max-w-md mb-6">{error || "No data available."}</p>
+        <p className="text-gray-600 max-w-md mb-6">{error || data?.error || "No data available."}</p>
         <button 
           onClick={() => window.location.reload()} 
           className="zepto-btn-filled"

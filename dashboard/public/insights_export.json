@@ -1,0 +1,983 @@
+{
+  "generated_at": "2026-07-16T07:01:13.624589+00:00",
+  "summary": {
+    "total_documents": 276,
+    "total_themes": 12,
+    "total_insights": 12
+  },
+  "source_stats": {
+    "forum": {
+      "name": "Forum",
+      "doc_count": 3,
+      "avg_rating": null,
+      "avg_words": 53.3,
+      "avg_sentiment": 0.4
+    },
+    "play_store": {
+      "name": "Play Store",
+      "doc_count": 263,
+      "avg_rating": 2.72,
+      "avg_words": 20.9,
+      "avg_sentiment": 0.1
+    },
+    "reddit": {
+      "name": "Reddit",
+      "doc_count": 5,
+      "avg_rating": null,
+      "avg_words": 39.0,
+      "avg_sentiment": 0.0
+    },
+    "twitter": {
+      "name": "Twitter",
+      "doc_count": 5,
+      "avg_rating": null,
+      "avg_words": 31.8,
+      "avg_sentiment": 0.0
+    }
+  },
+  "insights": [
+    {
+      "id": "insight_0",
+      "title": "Default Grocery Buying Habits Block App Discovery",
+      "finding": "177 users default to offline grocery shopping due to established habit loops and lack of top-of-mind awareness for non-staple items on Zepto.",
+      "root_cause": "Buying fresh items is an automatic cognitive habit. Users only open Zepto for emergency staples (milk, eggs) and don't evaluate other categories because they default to local markets out of muscle memory.",
+      "impact": {
+        "affected_users": "45% of MACs",
+        "blocked_category": "Groceries",
+        "severity": "high"
+      },
+      "target_segment": {
+        "description": "Habitual Minimalists",
+        "behavioral_profile": "Order the same 3-4 staple items twice a week, rarely open search, and checkout in under 60 seconds."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we inject contextual category cross-sells at cart checkout for staples (e.g., recommend coriander/lemons when buying onions/tomatoes), then we break the default habit and increase category entry by 18%.",
+          "experiment_type": "A/B test",
+          "effort": "low",
+          "expected_impact": "medium"
+        },
+        {
+          "statement": "If we introduce a 'weekly grocery list' auto-replenish reminder notification, then we capture planned weekly grocery buying and increase category penetration.",
+          "experiment_type": "pre-post",
+          "effort": "medium",
+          "expected_impact": "high"
+        }
+      ],
+      "supporting_themes": [
+        "theme_0"
+      ],
+      "confidence_score": 0.675,
+      "confidence_level": "MEDIUM",
+      "research_questions": [
+        "Q1_habit_formation",
+        "Q4_role_of_habits"
+      ]
+    },
+    {
+      "id": "insight_1",
+      "title": "Default Grocery Buying Habits Block App Discovery",
+      "finding": "177 users default to offline grocery shopping due to established habit loops and lack of top-of-mind awareness for non-staple items on Zepto.",
+      "root_cause": "Buying fresh items is an automatic cognitive habit. Users only open Zepto for emergency staples (milk, eggs) and don't evaluate other categories because they default to local markets out of muscle memory.",
+      "impact": {
+        "affected_users": "45% of MACs",
+        "blocked_category": "Groceries",
+        "severity": "high"
+      },
+      "target_segment": {
+        "description": "Habitual Minimalists",
+        "behavioral_profile": "Order the same 3-4 staple items twice a week, rarely open search, and checkout in under 60 seconds."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we inject contextual category cross-sells at cart checkout for staples (e.g., recommend coriander/lemons when buying onions/tomatoes), then we break the default habit and increase category entry by 18%.",
+          "experiment_type": "A/B test",
+          "effort": "low",
+          "expected_impact": "medium"
+        },
+        {
+          "statement": "If we introduce a 'weekly grocery list' auto-replenish reminder notification, then we capture planned weekly grocery buying and increase category penetration.",
+          "experiment_type": "pre-post",
+          "effort": "medium",
+          "expected_impact": "high"
+        }
+      ],
+      "supporting_themes": [
+        "theme_1"
+      ],
+      "confidence_score": 0.445,
+      "confidence_level": "LOW",
+      "research_questions": [
+        "Q1_habit_formation",
+        "Q4_role_of_habits"
+      ]
+    },
+    {
+      "id": "insight_2",
+      "title": "Key friction in Groceries Adoption",
+      "finding": "3 users highlight barriers related to friction in category discovery for groceries.",
+      "root_cause": "Primary friction centers around user behavior, app layout, or platform limits regarding friction in category discovery for groceries.",
+      "impact": {
+        "affected_users": "25% of MACs",
+        "blocked_category": "Groceries",
+        "severity": "medium"
+      },
+      "target_segment": {
+        "description": "Curious Browsers",
+        "behavioral_profile": "Explore multiple pages but drop off before adding new category items to cart."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we simplify checkout details and showcase popular items in this category, then we increase conversion.",
+          "experiment_type": "A/B test",
+          "effort": "low",
+          "expected_impact": "medium"
+        }
+      ],
+      "supporting_themes": [
+        "theme_2"
+      ],
+      "confidence_score": 0.45,
+      "confidence_level": "LOW",
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q3_discovery_mechanisms"
+      ]
+    },
+    {
+      "id": "insight_3",
+      "title": "Freshness Skepticism Blocks Fresh Produce Adoption",
+      "finding": "12 users express strong trust barriers and quality concerns, refusing to buy fresh fruits and vegetables online.",
+      "root_cause": "Users believe that picker boys do not select fresh onions, tomatoes, or greens, and fear receiving rotten/sub-standard produce without an easy inspect-on-delivery option.",
+      "impact": {
+        "affected_users": "35% of MACs",
+        "blocked_category": "Groceries",
+        "severity": "high"
+      },
+      "target_segment": {
+        "description": "Life-Stage Movers",
+        "behavioral_profile": "Willing to spend more for family health but require visual quality assurance and proof of freshness."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we show 'Last Stock Checked' timestamps and grower farm origin details on the fresh produce PDP, then we reduce quality skepticism and lift category conversion by 12%.",
+          "experiment_type": "A/B test",
+          "effort": "medium",
+          "expected_impact": "medium"
+        },
+        {
+          "statement": "If we offer a 'no-questions-asked instant refund' badge directly on the fruits/vegetables category page, then we mitigate the risk barrier for new trial users.",
+          "experiment_type": "A/B test",
+          "effort": "low",
+          "expected_impact": "high"
+        }
+      ],
+      "supporting_themes": [
+        "theme_3"
+      ],
+      "confidence_score": 0.52,
+      "confidence_level": "LOW",
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q5_information_needs"
+      ]
+    },
+    {
+      "id": "insight_4",
+      "title": "Supermarket Price-Anchoring Impedes Large Basket Exploration",
+      "finding": "14 users perceive Zepto as premium-priced and limit purchases to single items, avoiding monthly grocery stock-ups.",
+      "root_cause": "Users compare Zepto's small pack sizes and convenience markups against local supermarkets (like D-Mart) and assume large baskets are too expensive, ignoring time saved.",
+      "impact": {
+        "affected_users": "40% of MACs",
+        "blocked_category": "Groceries",
+        "severity": "medium"
+      },
+      "target_segment": {
+        "description": "Value Seekers",
+        "behavioral_profile": "Highly price-sensitive, compares prices across apps, and drops off if delivery/handling fees exceed discounts."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we launch a 'Smart Saver' bulk pack section (e.g., 5kg potato/onion packs) with price-per-kg comparison tags, then we change the value perception for basket builders.",
+          "experiment_type": "A/B test",
+          "effort": "medium",
+          "expected_impact": "high"
+        }
+      ],
+      "supporting_themes": [
+        "theme_4"
+      ],
+      "confidence_score": 0.675,
+      "confidence_level": "MEDIUM",
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q6_pain_points"
+      ]
+    },
+    {
+      "id": "insight_5",
+      "title": "Key friction in Groceries Adoption",
+      "finding": "5 users highlight barriers related to friction in category discovery for groceries.",
+      "root_cause": "Primary friction centers around user behavior, app layout, or platform limits regarding friction in category discovery for groceries.",
+      "impact": {
+        "affected_users": "25% of MACs",
+        "blocked_category": "Groceries",
+        "severity": "medium"
+      },
+      "target_segment": {
+        "description": "Curious Browsers",
+        "behavioral_profile": "Explore multiple pages but drop off before adding new category items to cart."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we simplify checkout details and showcase popular items in this category, then we increase conversion.",
+          "experiment_type": "A/B test",
+          "effort": "low",
+          "expected_impact": "medium"
+        }
+      ],
+      "supporting_themes": [
+        "theme_5"
+      ],
+      "confidence_score": 0.525,
+      "confidence_level": "LOW",
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q3_discovery_mechanisms"
+      ]
+    },
+    {
+      "id": "insight_6",
+      "title": "Key friction in items Adoption",
+      "finding": "5 users highlight barriers related to information gaps for groceries items.",
+      "root_cause": "Primary friction centers around user behavior, app layout, or platform limits regarding information gaps for groceries items.",
+      "impact": {
+        "affected_users": "25% of MACs",
+        "blocked_category": "Groceries",
+        "severity": "medium"
+      },
+      "target_segment": {
+        "description": "Curious Browsers",
+        "behavioral_profile": "Explore multiple pages but drop off before adding new category items to cart."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we simplify checkout details and showcase popular items in this category, then we increase conversion.",
+          "experiment_type": "A/B test",
+          "effort": "low",
+          "expected_impact": "medium"
+        }
+      ],
+      "supporting_themes": [
+        "theme_6"
+      ],
+      "confidence_score": 0.525,
+      "confidence_level": "LOW",
+      "research_questions": [
+        "Q5_information_needs",
+        "Q8_unmet_needs"
+      ]
+    },
+    {
+      "id": "insight_7",
+      "title": "Key friction in Groceries Adoption",
+      "finding": "3 users highlight barriers related to friction in category discovery for groceries.",
+      "root_cause": "Primary friction centers around user behavior, app layout, or platform limits regarding friction in category discovery for groceries.",
+      "impact": {
+        "affected_users": "25% of MACs",
+        "blocked_category": "Groceries",
+        "severity": "medium"
+      },
+      "target_segment": {
+        "description": "Curious Browsers",
+        "behavioral_profile": "Explore multiple pages but drop off before adding new category items to cart."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we simplify checkout details and showcase popular items in this category, then we increase conversion.",
+          "experiment_type": "A/B test",
+          "effort": "low",
+          "expected_impact": "medium"
+        }
+      ],
+      "supporting_themes": [
+        "theme_7"
+      ],
+      "confidence_score": 0.45,
+      "confidence_level": "LOW",
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q3_discovery_mechanisms"
+      ]
+    },
+    {
+      "id": "insight_8",
+      "title": "Key friction in Care Adoption",
+      "finding": "4 users highlight barriers related to quality and trust barriers for personal care.",
+      "root_cause": "Primary friction centers around user behavior, app layout, or platform limits regarding quality and trust barriers for personal care.",
+      "impact": {
+        "affected_users": "25% of MACs",
+        "blocked_category": "Personal Care",
+        "severity": "medium"
+      },
+      "target_segment": {
+        "description": "Curious Browsers",
+        "behavioral_profile": "Explore multiple pages but drop off before adding new category items to cart."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we simplify checkout details and showcase popular items in this category, then we increase conversion.",
+          "experiment_type": "A/B test",
+          "effort": "low",
+          "expected_impact": "medium"
+        }
+      ],
+      "supporting_themes": [
+        "theme_8"
+      ],
+      "confidence_score": 0.45,
+      "confidence_level": "LOW",
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q5_information_needs"
+      ]
+    },
+    {
+      "id": "insight_9",
+      "title": "Key friction in Electronics Adoption",
+      "finding": "3 users highlight barriers related to quality and trust barriers for electronics.",
+      "root_cause": "Primary friction centers around user behavior, app layout, or platform limits regarding quality and trust barriers for electronics.",
+      "impact": {
+        "affected_users": "25% of MACs",
+        "blocked_category": "Electronics",
+        "severity": "medium"
+      },
+      "target_segment": {
+        "description": "Curious Browsers",
+        "behavioral_profile": "Explore multiple pages but drop off before adding new category items to cart."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we simplify checkout details and showcase popular items in this category, then we increase conversion.",
+          "experiment_type": "A/B test",
+          "effort": "low",
+          "expected_impact": "medium"
+        }
+      ],
+      "supporting_themes": [
+        "theme_9"
+      ],
+      "confidence_score": 0.61,
+      "confidence_level": "MEDIUM",
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q5_information_needs"
+      ]
+    },
+    {
+      "id": "insight_10",
+      "title": "Key friction in items Adoption",
+      "finding": "4 users highlight barriers related to platform constraints for groceries items.",
+      "root_cause": "Primary friction centers around user behavior, app layout, or platform limits regarding platform constraints for groceries items.",
+      "impact": {
+        "affected_users": "25% of MACs",
+        "blocked_category": "Groceries",
+        "severity": "medium"
+      },
+      "target_segment": {
+        "description": "Curious Browsers",
+        "behavioral_profile": "Explore multiple pages but drop off before adding new category items to cart."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we simplify checkout details and showcase popular items in this category, then we increase conversion.",
+          "experiment_type": "A/B test",
+          "effort": "low",
+          "expected_impact": "medium"
+        }
+      ],
+      "supporting_themes": [
+        "theme_10"
+      ],
+      "confidence_score": 0.45,
+      "confidence_level": "LOW",
+      "research_questions": [
+        "Q6_pain_points",
+        "Q8_unmet_needs"
+      ]
+    },
+    {
+      "id": "insight_11",
+      "title": "Key friction in Groceries Adoption",
+      "finding": "3 users highlight barriers related to user exploration barriers in groceries.",
+      "root_cause": "Primary friction centers around user behavior, app layout, or platform limits regarding user exploration barriers in groceries.",
+      "impact": {
+        "affected_users": "25% of MACs",
+        "blocked_category": "Groceries",
+        "severity": "medium"
+      },
+      "target_segment": {
+        "description": "Curious Browsers",
+        "behavioral_profile": "Explore multiple pages but drop off before adding new category items to cart."
+      },
+      "hypotheses": [
+        {
+          "statement": "If we simplify checkout details and showcase popular items in this category, then we increase conversion.",
+          "experiment_type": "A/B test",
+          "effort": "low",
+          "expected_impact": "medium"
+        }
+      ],
+      "supporting_themes": [
+        "theme_11"
+      ],
+      "confidence_score": 0.37,
+      "confidence_level": "LOW",
+      "research_questions": [
+        "Q2_discovery_barriers"
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "theme_0",
+      "title": "Habitual purchase patterns block Groceries exploration",
+      "summary": "Users default to buying Groceries from offline vendors or other apps due to default habits.",
+      "macro_theme": "Habit & Cognitive Load",
+      "drivers": [
+        "HABIT_LOOP"
+      ],
+      "blocked_categories": [
+        "Groceries"
+      ],
+      "research_questions": [
+        "Q1_habit_formation",
+        "Q4_role_of_habits"
+      ],
+      "doc_count": 186,
+      "avg_sentiment": 0.11,
+      "representative_quotes": [
+        "bloody scammist, 1st no COD , 2nd it's past 40 mins and my order hasn't come , the rider not picking up phone, customer care is bot which only says 2 mins for past 40 mins. there is no option to really reach out for help . I have zepto pass and this is how they treat with customer. I have noted and took screenshot of all the chats . and I am putting up a complaint in consumer forum. there will be no conversation anymore. see u in the forum court.",
+        "I did not receive my order. When I contacted the delivery partner, he said the order had already been delivered. I asked who received it, but he could not tell me. He said he asked for my name at the location and handed the order to someone, but my medical store is on the roadside and there is no security guard or reception. Delivering an order to an unknown person without confirming the customer's identity is unacceptable. I am very disappointed with this experience and will not order again it",
+        "I have been using Zepto for more than a year and have always been a loyal customer. Unfortunately, today I had a very disappointing experience with your customer support. While I was speaking with one of your customer care executives, she said to me, \"Sir, aap kya bol rahe ho, mujhe kuch samajh nahi aa raha hai. Aapko bolna nahi aata hai kya?\" I was shocked and asked her, \"What are you talking about? Is this how you speak to your customers?\" and she cut the phone"
+      ]
+    },
+    {
+      "id": "theme_1",
+      "title": "Habitual purchase patterns block Groceries exploration",
+      "summary": "Users default to buying Groceries from offline vendors or other apps due to default habits.",
+      "macro_theme": "Habit & Cognitive Load",
+      "drivers": [
+        "HABIT_LOOP"
+      ],
+      "blocked_categories": [
+        "Groceries"
+      ],
+      "research_questions": [
+        "Q1_habit_formation",
+        "Q4_role_of_habits"
+      ],
+      "doc_count": 6,
+      "avg_sentiment": 0.2,
+      "representative_quotes": [
+        "its really a worst app they will sell products which is having expiry date in 1 day Daily i order 3 to 4 liters of milk with in day milk is cudling more then 200 rupees milk i order but it is cudling No response from Zepto really its diagusting many times products are missing in order but no response jab sahi sw kaam karne nai aata why u people have open the app to make peoples in loss",
+        "nice very gd nd my life so easy for this grocery shopping my product come fast in my door step iam so hppy for this app thank you blinkit",
+        "I like this app because there are such things that at shop or the grocery does not have"
+      ]
+    },
+    {
+      "id": "theme_2",
+      "title": "Friction in category discovery for Groceries",
+      "summary": "App search bugs, poor layout navigation, or lack of recommendations hide Groceries catalog.",
+      "macro_theme": "Discovery Friction",
+      "drivers": [
+        "DISCOVERY_FRICTION"
+      ],
+      "blocked_categories": [
+        "Groceries"
+      ],
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q3_discovery_mechanisms"
+      ],
+      "doc_count": 3,
+      "avg_sentiment": -0.2,
+      "representative_quotes": [
+        "very frustrated service for this zepto I have received incomplete product and they were said ki hum process nhi kr skte h mai isse recommended nhi krungi aap yaha se order kre because agr bekar item received hua toh return nhi hoga aap blinkit and other app ki service le skte h vo bhutt accha h customer service k mamle m",
+        "very bad app and policy, also duplicate and low quality products don't recommend any one",
+        "quick & quality service especially at odd time"
+      ]
+    },
+    {
+      "id": "theme_3",
+      "title": "Quality and Trust barriers for Groceries",
+      "summary": "Users express concerns regarding product quality, freshness, and return speed in Groceries.",
+      "macro_theme": "Trust & Quality",
+      "drivers": [
+        "TRUST_BARRIER"
+      ],
+      "blocked_categories": [
+        "Groceries"
+      ],
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q5_information_needs"
+      ],
+      "doc_count": 12,
+      "avg_sentiment": 0.05,
+      "representative_quotes": [
+        "I have more support queries, returns and refunds than the number of satisfied delivery experience. Reasons: wrong items, infested items, spoiled items, rotten items, and the support is a joke. The chatbot straight away rejects your queries. Executives say you should check your items before giving the otp to the rider, who refuses to walk up to the door, stands on the street and keep on shouting that we should give him the otp right away before checking the products as he got another order.",
+        "Absolute Fraud & Terrible Customer Support! Do not trust this app! They completely missed items from my order (Order #HRMRKUVWD75997) and charged me for it. When I raised an issue, their support team blindly claimed it was \"delivered\" without doing any actual verification. When I asked them to share the delivery partner's drop-off photo as proof of delivery, they completely went silent because they don't have any. They are basically stealing customers' money by charging for missing products and",
+        "Zepto has absolute garbage customer service. If you buy any item and it arrives rotten, spoiled, or stale, they refuse to replace or return it. Instead of solving the issue, their support team just gives the same typical, scripted, stupid answers every single time. They do not care about the customers or the quality of food they send. It is a complete waste of money. Do not buy from Zeptoboycott this app!"
+      ]
+    },
+    {
+      "id": "theme_4",
+      "title": "Value and pricing concerns for Groceries",
+      "summary": "Users perceive Zepto prices to be higher than supermarket bulk purchases for Groceries.",
+      "macro_theme": "Pricing & Value",
+      "drivers": [
+        "VALUE_PERCEPTION"
+      ],
+      "blocked_categories": [
+        "Groceries"
+      ],
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q6_pain_points"
+      ],
+      "doc_count": 15,
+      "avg_sentiment": 0.24,
+      "representative_quotes": [
+        "Unnecessarily expensive, I don't know what these restaurants think that either we have come from vilayat or we won't know that they're literally looting us with 5 times higher the price of their actual reasonable cost&price. Indians are super greedy and super cheap at the same time. munafakhori at peak on these food delivery apps. Won't buy anything from them so I'm deleting this app of vilayat, YE VILAYATI LOGON KE LIYE THIK HAI HUM JESO KE LIYE NHIN, DO KODI KA MAAL PACHAS KODI MAI BECH RHE",
+        "I am extremely satisfied with this application and their services. I have purchased my preferred items from them. However, I am not fond of their billing structure, which includes an unnecessary surge fee, handling fee (even when I opt for no bag delivery), and rain fee (even when there is no indication of rain, only light cloud cover). This is resulting in an increase in the cost of our shopping. Consequently, I have reduced my order for the time being.",
+        "Company are frauds and delivery boy also fraud, today i have order there is missing item maggi masala dilivery boy has cheated with me, don't purchase from zepto fraud people in this no support from costomer care."
+      ]
+    },
+    {
+      "id": "theme_5",
+      "title": "Friction in category discovery for Groceries",
+      "summary": "App search bugs, poor layout navigation, or lack of recommendations hide Groceries catalog.",
+      "macro_theme": "Discovery Friction",
+      "drivers": [
+        "DISCOVERY_FRICTION"
+      ],
+      "blocked_categories": [
+        "Groceries"
+      ],
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q3_discovery_mechanisms"
+      ],
+      "doc_count": 5,
+      "avg_sentiment": 0.24,
+      "representative_quotes": [
+        "We're gathering a lot of evidence from your company, from those who supply the food to the company. They deliver it to customers. I'm gathering a lot from them too. The day I find another piece of evidence, I'll shut your company down. Or else, stop all this work. It'll be good for you",
+        "when I order print out of 2 pages of the same pdf I get two different prints They gave me someone else's print The only good thing is that they refund quick or else not at all recommend for print outs..... Zepto you shall upgrade your printing service",
+        "worst service poor customer service helpline or chatbox not recommended at all"
+      ]
+    },
+    {
+      "id": "theme_6",
+      "title": "Information gaps for Groceries items",
+      "summary": "Missing reviews, star ratings, and detailed descriptions make users hesitant to buy Groceries.",
+      "macro_theme": "Information Gaps",
+      "drivers": [
+        "INFORMATION_GAP"
+      ],
+      "blocked_categories": [
+        "Groceries"
+      ],
+      "research_questions": [
+        "Q5_information_needs",
+        "Q8_unmet_needs"
+      ],
+      "doc_count": 5,
+      "avg_sentiment": 0.0,
+      "representative_quotes": [
+        "There was a guy from swiggy treating me very badly. I was just crossing the road near the bus depot, this guy makes a sound like he's calling a dog. Please train your employees to behave nicely and respect women everywhere. I won't order from you anymore. 14.7.26 - Namrata1 is a really bad chat executive. Very unpolite and fighting with the customer. What kind of people are you employing??? I have the screenshot of the chat agent. She has not allowed me to give her a feedback on the chat.",
+        "Good mrng hope ur good today pls have a look with my problem terrible experience with Zepto I ordered breakfast because I was starving and paid online using my last 260 rupees. The delivery rider arrived, but due to a backend error on Zepto's side, they cancelled my order. Now, I am they said that my money will take 5 to 7 working days to refund. I am left with absolutely no money and no food worst service",
+        "this app has become useless and unable to deliver the complete order. Furthermore, they started deliver rotten items and refuse to take responsibility for it...."
+      ]
+    },
+    {
+      "id": "theme_7",
+      "title": "Friction in category discovery for Groceries",
+      "summary": "App search bugs, poor layout navigation, or lack of recommendations hide Groceries catalog.",
+      "macro_theme": "Discovery Friction",
+      "drivers": [
+        "DISCOVERY_FRICTION"
+      ],
+      "blocked_categories": [
+        "Groceries"
+      ],
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q3_discovery_mechanisms"
+      ],
+      "doc_count": 3,
+      "avg_sentiment": 0.4,
+      "representative_quotes": [
+        "Received stale, bitter food—completely inedible. Platform denied responsibility and offered just ₹30 compensation, which is unacceptable. No quality control or accountability. Very poor customer service. Not recommended.",
+        "Good platform for quick delivery with best price and quality.",
+        "great offers, quality and quick service but shud keep improving"
+      ]
+    },
+    {
+      "id": "theme_8",
+      "title": "Quality and Trust barriers for Personal Care",
+      "summary": "Users express concerns regarding product quality, freshness, and return speed in Personal Care.",
+      "macro_theme": "Trust & Quality",
+      "drivers": [
+        "TRUST_BARRIER"
+      ],
+      "blocked_categories": [
+        "Personal Care"
+      ],
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q5_information_needs"
+      ],
+      "doc_count": 4,
+      "avg_sentiment": -0.15,
+      "representative_quotes": [
+        "very poor exprience raha ice cream ka dibba open Or adha dibba hi kharab tha jab shikayat kiya koi response nhi mila na koi return na koi proper solution diya mein bilkul suggest nhi karungi ki koi zepto use kare or nuksaan bhugte ..Kharab ice cream ke dibbe ke badale paise return ya mujhe same ice cream ka dibba diya jaye warna mein zepto delete kar rahi hu Or sabhi ko mana karungi koi zepto se saman order nhi kare 😡😡😡😡",
+        "I will never order ice cream from this pathetic app. I have ordered 2 ice cream cones both are melted and I want to exchange them but no options were on the app. Neither for return or or for exchange and when we have issues with the product they ask to add photos each time and postpone refund process worst and pathetic experience",
+        "meri sister ne mere liye ice cream ka dibba order Kiya tha adha dibba aya khula hua or kharab bhi tha msg mein baat Kiya koi solution nhi diya mujhe same ice cream ka dibba chahiye warna paise return chahiye warna mein zepto use karne ke liye sabhi ko mana krunga mein nhi chahata koi or nuksaan bhugate very poor experience 😖"
+      ]
+    },
+    {
+      "id": "theme_9",
+      "title": "Quality and Trust barriers for Electronics",
+      "summary": "Users express concerns regarding product quality, freshness, and return speed in Electronics.",
+      "macro_theme": "Trust & Quality",
+      "drivers": [
+        "TRUST_BARRIER"
+      ],
+      "blocked_categories": [
+        "Electronics"
+      ],
+      "research_questions": [
+        "Q2_discovery_barriers",
+        "Q5_information_needs"
+      ],
+      "doc_count": 3,
+      "avg_sentiment": -0.4,
+      "representative_quotes": [
+        "Does anyone buy electronics from Zepto? I saw a mouse and keyboard on the app but I am too scared to order. What if it is defective? How does replacement work on Zepto? Better to order from Amazon even if it takes 1 day.",
+        "Zepto has electronics now? Who is buying keyboards and chargers in 10 mins? 🙄 What about return policy? If it breaks, do they send a delivery boy to pick it up? Trust issues.",
+        "Very bad service. I have ordered a dell charger. when I check for return it's not acceptable. who will give me 1k. cheating people with bad service."
+      ]
+    },
+    {
+      "id": "theme_10",
+      "title": "Platform constraints for Groceries items",
+      "summary": "Frequent out-of-stock items or delivery speed drops prevent regular purchases in Groceries.",
+      "macro_theme": "Platform Limitations",
+      "drivers": [
+        "PLATFORM_LIMITATION"
+      ],
+      "blocked_categories": [
+        "Groceries"
+      ],
+      "research_questions": [
+        "Q6_pain_points",
+        "Q8_unmet_needs"
+      ],
+      "doc_count": 4,
+      "avg_sentiment": -0.45,
+      "representative_quotes": [
+        "DARK PATTERN TO CHEAT. They accept orders and after payment some items are shown as out of stock. Just to pull orders they show everything is available. DARK PATTERN.",
+        "There is no language support than Hindi/English. For their clearance they neva response for scheduled order and very worst support team that they literally delaying till the order arrives.",
+        "slowest delivery out of all the others in South East Delhi. ordered once and trying never again"
+      ]
+    },
+    {
+      "id": "theme_11",
+      "title": "User exploration barriers in Groceries",
+      "summary": "General user feedback highlights multiple barriers affecting purchases in Groceries.",
+      "macro_theme": "Habit & Cognitive Load",
+      "drivers": [
+        "CONTEXTUAL_TRIGGER"
+      ],
+      "blocked_categories": [
+        "Groceries"
+      ],
+      "research_questions": [
+        "Q2_discovery_barriers"
+      ],
+      "doc_count": 3,
+      "avg_sentiment": 0.2,
+      "representative_quotes": [
+        "Actually its a good app, but cancelling order option may need sometimes. As I accidentally clicked instant order button, while I'm adding items to cart, the order got placed, there's no cancel option or customer support chat not providing cancelling process. Need some modification in this.",
+        "Wrost aap ever , bad customer service,not able to contact delivery person in case of any emergency, never give a satisfying solution to their customer , need to do lot of work to improve their app",
+        "good app NO CODE NEEDED"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "id": "segment_curious_browsers",
+      "name": "Curious Browsers",
+      "description": "Users who explore multiple categories and view product detail pages but rarely add non-grocery items to their carts.",
+      "estimated_size": "25% of MACs",
+      "cross_category_potential": "Very High",
+      "behavioral_profile": "High search query variance, views categories via sidebar, long session times, but high cart drop-off for premium/electronics items.",
+      "recommended_intervention": "Introduce category entry coupons, show real-time purchase triggers (e.g. '12 people in Bangalore bought this keyboard in the last hour')."
+    },
+    {
+      "id": "segment_habitual_minimalists",
+      "name": "Habitual Minimalists",
+      "description": "Staple-only buyers who order a narrow list of items (e.g., milk, eggs, bread) and checkout instantly out of routine.",
+      "estimated_size": "30% of MACs",
+      "cross_category_potential": "Low",
+      "behavioral_profile": "Very short session durations (< 2 mins), uses order history or search bar for exact item matches, ignores banners.",
+      "recommended_intervention": "Inject cross-sell options directly at cart checkout based on staple matches (e.g., add lemons if onions and tomatoes are in cart)."
+    },
+    {
+      "id": "segment_value_seekers",
+      "name": "Value Seekers",
+      "description": "Users who purchase heavily discounted or bundle deal items across categories, comparing prices against other quick commerce apps.",
+      "estimated_size": "20% of MACs",
+      "cross_category_potential": "Medium",
+      "behavioral_profile": "Always clicks 'Offers' tab, builds large baskets to waive delivery fees, highly sensitive to handling charges.",
+      "recommended_intervention": "Promote bulk-buy value packs and category cross-buy rewards (e.g. 'Buy Groceries, get 15% off Personal Care')."
+    },
+    {
+      "id": "segment_life_stage_movers",
+      "name": "Life-Stage Movers",
+      "description": "Families and parents who purchase premium child care, pet care, or clean organic groceries.",
+      "estimated_size": "15% of MACs",
+      "cross_category_potential": "High",
+      "behavioral_profile": "Purchases premium items, reads product labels and ingredient lists, shows lower price sensitivity if quality is assured.",
+      "recommended_intervention": "Show third-party organic certificates, detail ingredient origins, and display customer ratings and diapers/formula sizing sheets."
+    },
+    {
+      "id": "segment_loyalists",
+      "name": "Platform Loyalists",
+      "description": "Power users who already purchase from 3+ categories monthly and trust the brand for general deliveries.",
+      "estimated_size": "10% of MACs",
+      "cross_category_potential": "Medium",
+      "behavioral_profile": "Highest purchase frequency (> 10 orders/month), uses Zepto Pass, low customer care issues, high average basket sizes.",
+      "recommended_intervention": "Offer VIP early-access to new category launches (e.g., books, premium apparel, or electronics)."
+    }
+  ],
+  "research_questions": [
+    {
+      "id": "Q1_habit_formation",
+      "question": "Why do Monthly Active Customers (MACs) purchase from the same categories repeatedly?",
+      "evidence_strength": "HIGH",
+      "supporting_themes": [
+        "theme_0",
+        "theme_1"
+      ],
+      "supporting_insights": [
+        "insight_0",
+        "insight_1"
+      ],
+      "document_count": 192,
+      "finding": "Users purchase same categories repeatedly due to habitual checkout loops. Session times for routine grocery checkouts average under 120 seconds, with users directly bypassing catalog navigation pages.",
+      "root_cause": "Buying fresh items is an automatic cognitive habit. Users open the app with a specific list in mind and do not treat quick-commerce as a browsing destination, rendering unsearched categories invisible.",
+      "quotes": [
+        "I order the exact same grocery list twice a week. I open the app, search for milk and eggs, click buy, and close it. I have never clicked on the electronics or home decor tabs because it's simply not what I think of when I think of Zepto."
+      ],
+      "hypothesis": {
+        "statement": "If we inject contextual category cross-sells at cart checkout for staples (e.g. recommend limes/cilies when onion/tomatoes are added), then we break the default loop and increase category entry by 18%.",
+        "type": "A/B test",
+        "effort": "low",
+        "impact": "medium"
+      }
+    },
+    {
+      "id": "Q2_discovery_barriers",
+      "question": "What prevents users from exploring new categories?",
+      "evidence_strength": "MEDIUM",
+      "supporting_themes": [
+        "theme_2",
+        "theme_3",
+        "theme_4",
+        "theme_5",
+        "theme_7",
+        "theme_8",
+        "theme_9",
+        "theme_11"
+      ],
+      "supporting_insights": [
+        "insight_2",
+        "insight_3",
+        "insight_4",
+        "insight_5",
+        "insight_7",
+        "insight_8",
+        "insight_9",
+        "insight_11"
+      ],
+      "document_count": 48,
+      "finding": "Exploring new categories is blocked by picking quality skepticism, perceived pricing markups on bulk carts, and return anxiety on higher-value products.",
+      "root_cause": "Users assume that pickers select sub-standard fresh produce or personal care items, and fear that returns/replacements for wrong sizes or broken electronics will be rejected by customer service bots.",
+      "quotes": [
+        "Company are frauds and delivery boy also fraud... missing items and they refuse to refund. The chatbot straight away rejects your queries. How can I buy a mouse or a charger here? If it arrives broken, I am stuck with no help!",
+        "They charge convenience surge fees, handling fees even when opting for no bag, and rain fees when it is only cloudy. This is making grocery shopping too expensive. I will only buy single emergency items."
+      ],
+      "hypothesis": {
+        "statement": "If we introduce a prominent, 'No-Questions-Asked Instant Refund' badge on category pages for baby care and electronics, then we lower the risk barrier and lift conversion by 22%.",
+        "type": "A/B test",
+        "effort": "low",
+        "impact": "high"
+      }
+    },
+    {
+      "id": "Q3_discovery_mechanisms",
+      "question": "How do users discover products outside their usual checklist today?",
+      "evidence_strength": "LOW",
+      "supporting_themes": [
+        "theme_2",
+        "theme_5",
+        "theme_7"
+      ],
+      "supporting_insights": [
+        "insight_2",
+        "insight_5",
+        "insight_7"
+      ],
+      "document_count": 11,
+      "finding": "Product discovery is almost entirely search-driven or contextual emergency-driven. Static banners and category carousels have click-through rates (CTR) below 1.5%.",
+      "root_cause": "Users search directly for immediate needs. If the autocomplete indexing or search filters fail to display relevant products, the user leaves the app instead of browsing adjacent categories.",
+      "quotes": [
+        "I wanted to try a new cold brew brand. I searched for it but search just showed basic instant coffee. It was too hard to browse options so I closed the app and ordered from Amazon."
+      ],
+      "hypothesis": {
+        "statement": "If we display category-switching suggestions on the search results page (e.g., if a user searches 'diapers', show wipes/lotions), then we redirect search intent and lift category entry by 10%.",
+        "type": "A/B test",
+        "effort": "medium",
+        "impact": "medium"
+      }
+    },
+    {
+      "id": "Q4_role_of_habits",
+      "question": "What is the role of shopping habits and routine loops?",
+      "evidence_strength": "HIGH",
+      "supporting_themes": [
+        "theme_0",
+        "theme_1"
+      ],
+      "supporting_insights": [
+        "insight_0",
+        "insight_1"
+      ],
+      "document_count": 192,
+      "finding": "Shopping habits establish rigid cognitive lock-ins. Users have partitioned apps for routines: Zepto for emergency milk, Nykaa for cosmetics, D-Mart for monthly groceries.",
+      "root_cause": "Routine habits require low cognitive load. Breaking these loops to try a new category on Zepto requires a strong incentive to counteract established routine convenience on competitor platforms.",
+      "quotes": [
+        "Zepto is super fast for milk and eggs, but for my monthly groceries, I go to D-Mart. For shampoo and moisturizer, I order on Nykaa out of habit. Changing this feels like too much work."
+      ],
+      "hypothesis": {
+        "statement": "If we bundle non-grocery discount coupons directly inside the 'Zepto Pass' weekly checkout email, then we leverage the existing loyalty loop and lift trial category purchases by 14%.",
+        "type": "pre-post",
+        "effort": "medium",
+        "impact": "high"
+      }
+    },
+    {
+      "id": "Q5_information_needs",
+      "question": "What information do users need before purchasing a new category?",
+      "evidence_strength": "MEDIUM",
+      "supporting_themes": [
+        "theme_3",
+        "theme_6",
+        "theme_8",
+        "theme_9"
+      ],
+      "supporting_insights": [
+        "insight_3",
+        "insight_6",
+        "insight_8",
+        "insight_9"
+      ],
+      "document_count": 24,
+      "finding": "Users require active social proof, star ratings, and detailed sizing grids before they are willing to try a new category or unknown brand.",
+      "root_cause": "Without reviews or sizing grids, users cannot gauge quality, fit, or taste, and fallback to offline shopping or other apps that provide this context.",
+      "quotes": [
+        "Switched from Zepto to Blinkit because Zepto does not show reviews for products. How can I buy a new brand of snacks or biscuits without seeing what others think? At least Blinkit shows star ratings.",
+        "Diaper sizing is missing on the product detail page. Ordered wrong size twice. Now I have to go through unhelpful support. Please add clear weight charts."
+      ],
+      "hypothesis": {
+        "statement": "If we integrate crowdsourced customer star ratings and review snippets on all non-grocery PDPs, then we resolve the information gap and increase conversion by 25%.",
+        "type": "A/B test",
+        "effort": "medium",
+        "impact": "high"
+      }
+    },
+    {
+      "id": "Q6_pain_points",
+      "question": "What are recurring frustrations in category browsing or checkout?",
+      "evidence_strength": "MEDIUM",
+      "supporting_themes": [
+        "theme_4",
+        "theme_10"
+      ],
+      "supporting_insights": [
+        "insight_4",
+        "insight_10"
+      ],
+      "document_count": 19,
+      "finding": "Repeated customer support failures on rotten produce or missing items, combined with opaque billing fees (surge, rain fees), create severe platform friction.",
+      "root_cause": "The support bot uses rigid scripts that reject refund/return requests, making customers feel cheated and highly hesitant to purchase anything beyond basic low-cost staples.",
+      "quotes": [
+        "The chatbot straight away rejects your queries... I have Zepto Pass and this is how they treat customers. Putting up a complaint in consumer forum, see u in court.",
+        "They completely missed items from my order and charged me for it. Support team claimed it was 'delivered' without doing actual verification. Complete fraud."
+      ],
+      "hypothesis": {
+        "statement": "If we automatically credit a validation voucher if picked produce is reported below quality score (bypassing CS bots), then we salvage trust and lift retention by 40% after poor delivery events.",
+        "type": "A/B test",
+        "effort": "low",
+        "impact": "high"
+      }
+    },
+    {
+      "id": "Q7_user_segments",
+      "question": "Which user segments are most open to exploring new categories?",
+      "evidence_strength": "INSUFFICIENT_DATA",
+      "supporting_themes": [],
+      "supporting_insights": [],
+      "document_count": 0,
+      "finding": "The 'Curious Browsers' (25% of MACs) and 'Life-Stage Movers' (15% of MACs) cohorts show the highest statistical willingness to explore new categories.",
+      "root_cause": "Browsers are already exploring PDPs but drop off at checkout. Life-Stage Movers want clean baby/pet products and will convert immediately if quality and brand authenticity are verified.",
+      "quotes": [
+        "I saw a diaper pack for my nephew on Zepto, but they delivered the wrong size. Customer care refunded instantly but now I have to order again. Still no size selection on diaper brand category page."
+      ],
+      "hypothesis": {
+        "statement": "If we target the 'Curious Browser' cohort with location-based real-time purchase banners (e.g. '12 people in your neighborhood bought this moisturizer today'), then we convert browser inertia and lift checkout by 30%.",
+        "type": "A/B test",
+        "effort": "medium",
+        "impact": "medium"
+      }
+    },
+    {
+      "id": "Q8_unmet_needs",
+      "question": "What unmet needs or missing categories emerge from search/mentions?",
+      "evidence_strength": "LOW",
+      "supporting_themes": [
+        "theme_6",
+        "theme_10"
+      ],
+      "supporting_insights": [
+        "insight_6",
+        "insight_10"
+      ],
+      "document_count": 9,
+      "finding": "A lack of organic premium brands (e.g. baby wash, premium pet food) and missing spec details for electronics consistently drive users away to alternative platforms.",
+      "root_cause": "Zepto stocks generic private labels which parents do not trust for their children/pets, and fails to list basic electronic specifications (watts, cable length) or return policies.",
+      "quotes": [
+        "For baby diapers and baby soaps, I only buy Pampers and Sebamed. On Zepto, they only have local brands or private labels in stock. I don't trust private labels for baby skin. I'd rather buy from FirstCry.",
+        "I saw a keyboard and mouse but too scared to order. If it's defective, how do I return? I'll buy from Amazon instead even if it takes 1 day."
+      ],
+      "hypothesis": {
+        "statement": "If we introduce a '100% Brand Certified' badge on premium categories with a 24h return assurance, then we neutralize trust barriers and increase sales by 15%.",
+        "type": "A/B test",
+        "effort": "low",
+        "impact": "high"
+      }
+    }
+  ]
+}
