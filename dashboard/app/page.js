@@ -25,26 +25,47 @@ export default function Dashboard() {
   const [triggerStatus, setTriggerStatus] = useState("");
 
   useEffect(() => {
-    // Dynamically check for deployed API URL, fallback to local static JSON
-    const baseApiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const fetchUrl = baseApiUrl ? `${baseApiUrl}/api/insights` : "/insights_export.json";
-    
-    fetch(fetchUrl)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to load export JSON feed.");
+    async function loadData() {
+      const rawApiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const cleanBaseUrl = rawApiUrl ? rawApiUrl.replace(/\/+$/, "") : "";
+
+      // 1. Attempt API endpoint if NEXT_PUBLIC_API_URL is set
+      if (cleanBaseUrl) {
+        try {
+          const res = await fetch(`${cleanBaseUrl}/api/insights`);
+          if (res.ok) {
+            const json = await res.json();
+            if (json && !json.error) {
+              setData(json);
+              setLoading(false);
+              return;
+            }
+          }
+        } catch (err) {
+          console.warn("API endpoint fetch failed, falling back to static insights_export.json:", err);
         }
-        return res.json();
-      })
-      .then((json) => {
+      }
+
+      // 2. Fallback to bundled static JSON feed in /public/insights_export.json
+      try {
+        const res = await fetch("/insights_export.json");
+        if (!res.ok) {
+          throw new Error("Failed to load local insights_export.json");
+        }
+        const json = await res.json();
+        if (json.error) {
+          throw new Error(json.error);
+        }
         setData(json);
         setLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error("Error loading dashboard data:", err);
         setError("Please run the pipeline script (python run_pipeline.py) first to generate data/insights_export.json.");
         setLoading(false);
-      });
+      }
+    }
+
+    loadData();
   }, []);
 
   if (loading) {
