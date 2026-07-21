@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+/* Zepto Brand Colors and Aesthetic Variables */
+:root {
+  --zepto-purple: #3E0075;
+  --zepto-purple-light: #5C0099;
+  --zepto-purple-bg: #F3EAFF;
+  --zepto-magenta: #E21A84;
+  --zepto-magenta-light: #FF007F;
+  --zepto-green: #16A34A;
+  --zepto-red: #DC2626;
+  --zepto-amber: #F59E0B;
+  
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --bg-sidebar: #F4F3F6;
+  --text-primary: #1F2937;
+  --text-secondary: #5A6477;
+  --text-muted: #9CA3AF;
+  --border: #E5E7EB;
+  
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --radius-badge: 6px;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 4px 16px rgba(62, 0, 117, 0.06), 0 2px 4px rgba(62, 0, 117, 0.02);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Zepto Branded Utility Classes */
+.zepto-header {
+  background-color: var(--zepto-purple);
+  color: white;
+  border-bottom: 3px solid var(--zepto-magenta);
+}
+
+.zepto-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zepto-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.zepto-btn-outline {
+  background: var(--bg-primary);
+  border: 1.5px solid var(--zepto-magenta);
+  color: var(--zepto-magenta);
+  font-weight: 600;
+  border-radius: var(--radius-button);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 14px;
+}
+
+.zepto-btn-outline:hover {
+  background-color: var(--zepto-magenta);
+  color: white;
+}
+
+.zepto-btn-filled {
+  background-color: var(--zepto-magenta);
+  border: 1.5px solid var(--zepto-magenta);
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius-button);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 14px;
+}
+
+.zepto-btn-filled:hover {
+  background-color: var(--zepto-magenta-light);
+  border-color: var(--zepto-magenta-light);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Category Sidebar active matching Zepto */
+.zepto-sidebar {
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+}
+
+.zepto-sidebar-item {
+  padding: 14px 20px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.zepto-sidebar-item:hover {
+  background-color: rgba(62, 0, 117, 0.03);
+  color: var(--zepto-purple);
+}
+
+.zepto-sidebar-item.active {
+  color: var(--zepto-purple);
+  background-color: var(--zepto-purple-bg);
+  border-left-color: var(--zepto-purple);
+  font-weight: 700;
+}
+
+/* Status Badges */
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: var(--radius-badge);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-high {
+  background-color: #DCFCE7;
+  color: var(--zepto-green);
+  border: 1px solid #BBF7D0;
+}
+
+.badge-medium {
+  background-color: #FEF3C7;
+  color: #D97706;
+  border: 1px solid #FDE68A;
+}
+
+.badge-low {
+  background-color: #FEE2E2;
+  color: var(--zepto-red);
+  border: 1px solid #FECACA;
+}
+
+/* Custom visual styling helpers */
+.gradient-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--zepto-purple) 0%, var(--zepto-magenta) 100%);
+  border-radius: 2px;
+}

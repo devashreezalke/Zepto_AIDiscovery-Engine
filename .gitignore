@@ -1,0 +1,28 @@
+# Environment variables
+.env
+
+# Database file (keep schema and initialization scripts, ignore db binaries)
+data/discovery.db
+pipeline_run.log
+
+# Python cache & virtualenv
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+.pytest_cache/
+
+# Node.js dependencies & builds
+node_modules/
+dashboard/node_modules/
+dashboard/.next/
+dashboard/out/
+dashboard/public/insights_export.json
+.next/
+
+# OS files
+.DS_Store
+Thumbs.db
